@@ -1,12 +1,10 @@
-import './app.scss';
-import NxWelcome from './nx-welcome';
 
-export function App() {
+import { Layout } from '../Components/Layouts/Layout';
+import './App.scss';
+
+function App() {
   return (
-    <>
-      <NxWelcome title="webclient" />
-      <div />
-    </>
+   <Layout/>
   );
 }
 

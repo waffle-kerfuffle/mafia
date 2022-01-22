@@ -3,9 +3,10 @@ import { IsMobilePhone, IsNotEmpty } from "class-validator";
 
 export class UpdateUserIn {
 
+  /** update key */
   @IsNotEmpty()
   @ApiProperty()
-  userId?: number
+  userId: number
   
   @IsNotEmpty()
   @ApiProperty()

@@ -1,17 +1,18 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty, ApiTags } from "@nestjs/swagger";
 
 /**
  * Base pagination fields
  */
+@ApiTags('utility')
 export class Pagination {
 
   /** number of items to take aka. page size */
   @ApiProperty()
-  public take: number;
+  public take: number = 10;
 
   /** requested page */
   @ApiProperty()
-  public page: number;
+  public page: number = 0;
 
   /** 
    * number of items to skip

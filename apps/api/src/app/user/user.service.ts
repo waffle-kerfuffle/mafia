@@ -1,4 +1,4 @@
-import { Body, Injectable } from '@nestjs/common';
+import { Body, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Pagination } from './../utility/model/pagination';
 import { Repository } from 'typeorm';
@@ -17,7 +17,7 @@ export class UserService {
 
   async getAll(paging?: Pagination): Promise<User[]> {
 
-    const res: User[] = await this.usersRepository.find({ take: paging.take, skip: paging.skip });
+    const res: User[] = await this.usersRepository.find({ take: paging?.take ?? 10, skip: paging?.skip ?? 0});
     return res;
   }
 
@@ -43,13 +43,34 @@ export class UserService {
 
     const user: User = await this.usersRepository.findOne(updateArgs.userId);
 
+    if (!user)
+      throw new NotFoundException({}, 'no user with the specified [userId] exists')
+
     Object.assign(user, updateArgs);
-    
+
     const res: User = await this.usersRepository.save(user);
 
     return res;
   }
 
-  
+  /**
+   * 
+   * @param userId the id of the user to delete
+   * @returns the deleted user
+   * @throws {@link NotFoundException} if no user with the specified userId is available
+   */
+  async delete(userId: number) {
+
+    const user: User = await this.usersRepository.findOne(userId);
+
+    if (user)
+      await this.usersRepository.delete(userId)
+    else
+      throw new NotFoundException({}, 'no user with the specified [userId] exists')
+
+    return user;
+  }
+
+
 
 }

@@ -5,7 +5,7 @@ import { CreateUserIn } from './dto/in/create-user.in';
 import { FindUserIn } from './dto/in/find-user.in';
 import { UpdateUserIn } from './dto/in/update-user.in copy';
 import { User } from './model/user.entity';
-import { UserService } from './user.service';
+import { UserService } from './service/user.service';
 
 @ApiTags('User')
 @Controller('user')

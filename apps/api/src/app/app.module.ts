@@ -21,6 +21,7 @@ import { UtilityModule } from './utility/utility.module';
     }),
     UtilityModule,
     UserModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [],

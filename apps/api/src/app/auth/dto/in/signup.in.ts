@@ -1,14 +1,15 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty } from "class-validator";
+import { CreateUserIn } from "../../../user/dto/in/create-user.in";
 
-export class CreateUserIn {
+export class SignupIn {
 
   @IsNotEmpty()
   @ApiProperty()
-  username: string
-  
+  user: CreateUserIn
+
   @IsNotEmpty()
   @ApiProperty()
-  telno: string
-  
+  password: string
+
 }

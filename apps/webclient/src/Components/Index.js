@@ -6,6 +6,7 @@ import "../css/themify-icons.css";
 import img1 from "../img/process-icons/1.png";
 import img2 from "../img/process-icons/2.png";
 import img3 from "../img/process-icons/3.png";
+
 import React from "react";
 import { Hero } from "../Components/Hero";
 import { About } from "../Components/About";
@@ -131,7 +132,7 @@ export const Index = () => {
             <div className="member-text">
               <div
                 className="member-img set-bg"
-                data-setbg="../img/member/1.jpg"
+          
               ></div>
               <h2>Tom Binegar</h2>
               <span>Business Development</span>
@@ -150,7 +151,7 @@ export const Index = () => {
             <div className="member-info">
               <div
                 className="member-img mf set-bg"
-                data-setbg="../img/member/1.jpg"
+           
               ></div>
               <div className="member-meta">
                 <h2>Tom Binegar</h2>
@@ -169,7 +170,8 @@ export const Index = () => {
             <div className="member-text">
               <div
                 className="member-img set-bg"
-                data-setbg="../img/member/2.jpg"
+             
+                
               ></div>
               <h2>Jackson Nash</h2>
               <span>Business Development</span>
@@ -188,7 +190,8 @@ export const Index = () => {
             <div className="member-info">
               <div
                 className="member-img mf set-bg"
-                data-setbg="../img/member/2.jpg"
+            
+                
               ></div>
               <div className="member-meta">
                 <h2>Jackson Nash</h2>
@@ -207,7 +210,8 @@ export const Index = () => {
             <div className="member-text">
               <div
                 className="member-img set-bg"
-                data-setbg="../img/member/3.jpg"
+             
+                
               ></div>
               <h2>Tom Binegar</h2>
               <span>Business Development</span>
@@ -226,7 +230,8 @@ export const Index = () => {
             <div className="member-info">
               <div
                 className="member-img mf set-bg"
-                data-setbg="../img/member/3.jpg"
+            
+                
               ></div>
               <div className="member-meta">
                 <h2>Aaron Ballance</h2>
@@ -323,7 +328,7 @@ export const Index = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 push-8">
-              <img src="img/quote.png" alt="" className="quote mb-5" />
+              <img  alt="" className="quote mb-5" />
               <div className="review-text-slider owl-carousel">
                 <div className="review-text">
                   <p>
@@ -356,7 +361,7 @@ export const Index = () => {
                 <div className="author-meta">
                   <div
                     className="author-avatar set-bg"
-                    data-setbg="img/review/1.jpg"
+               
                   ></div>
                   <div className="author-name">
                     <h4>Aaron Ballance</h4>
@@ -366,7 +371,8 @@ export const Index = () => {
                 <div className="author-meta">
                   <div
                     className="author-avatar set-bg"
-                    data-setbg="img/review/2.jpg"
+                
+                    
                   ></div>
                   <div className="author-name">
                     <h4>Jackson Nash</h4>
@@ -376,7 +382,7 @@ export const Index = () => {
                 <div className="author-meta">
                   <div
                     className="author-avatar set-bg"
-                    data-setbg="img/review/3.jpg"
+                 
                   ></div>
                   <div className="author-name">
                     <h4>Katy Abrams</h4>
@@ -421,7 +427,7 @@ export const Index = () => {
             <div className="col-md-4">
               <div className="blog-item">
                 <figure className="blog-thumb">
-                  <img src="img/blog/1.jpg" alt="" />
+              
                 </figure>
                 <div className="blog-text">
                   <div className="post-date">03 jan 2018</div>
@@ -448,7 +454,7 @@ export const Index = () => {
             <div className="col-md-4">
               <div className="blog-item">
                 <figure className="blog-thumb">
-                  <img src="img/blog/2.jpg" alt="" />
+             
                 </figure>
                 <div className="blog-text">
                   <div className="post-date">28 dec 2018</div>
@@ -476,7 +482,8 @@ export const Index = () => {
             <div className="col-md-4">
               <div className="blog-item">
                 <figure className="blog-thumb">
-                  <img src="img/blog/3.jpg" alt="" />
+                  <img src="
+                  " alt="" />
                 </figure>
                 <div className="blog-text">
                   <div className="post-date">28 aug 2018</div>
@@ -505,7 +512,7 @@ export const Index = () => {
         <div className="container">
           <div className="row spad">
             <div className="col-md-6 col-lg-3 footer-widget">
-              <img src="img/logo.png" className="mb-4" alt="" />
+              <img  className="mb-4" alt="" />
               <p>
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia dese mollit anim id est laborum.
@@ -580,10 +587,10 @@ export const Index = () => {
             <div className="row">
               <div className="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
                 <a href="">
-                  <img src="img/appstore.png" alt="" className="mr-2" />
+                  {/* <img src="img/appstore.png" alt="" className="mr-2" /> */}
                 </a>
                 <a href="">
-                  <img src="img/playstore.png" alt="" />
+                  {/* <img src="img/playstore.png" alt="" /> */}
                 </a>
               </div>
               <div className="col-lg-8 text-center text-lg-right">

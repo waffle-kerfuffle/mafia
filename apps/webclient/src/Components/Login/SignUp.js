@@ -4,22 +4,28 @@ import { Link } from 'react-router-dom';
 import { validate } from './validate';
 import styles from "../../css/SignUp.module.css";
 
-export const Login = () => {
+export const SignUp = () => {
 
     const [data, setData] = useState({
+        name: "",
         email: "",
         password: "",
-        isRemembered: false,
-        });
+        confirmPassword: "",
+        isAccepted: false
+    });
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
 
     useEffect(() => {
-        setErrors(validate(data, "login"))
+        setErrors(validate(data, "signup"))
     }, [data, touched])
 
     const changeHandler = event => {
-        setData({ ...data, [event.target.name]: event.target.value })
+        if (event.target.name === "isAccepted") {
+            setData({ ...data, [event.target.name]: event.target.checked })
+        } else {
+            setData({ ...data, [event.target.name]: event.target.value })
+        }
     }
 
     const onKeyPressHanlder = event => {
@@ -29,22 +35,35 @@ export const Login = () => {
     const submitHandler = event => {
         event.preventDefault();
         if (!Object.keys(errors).length) {
-           // notify("", "")
+          //  notify("", "")
         } else {
-           // notify("", "")
+         //   notify("", "")
             setTouched({
+                name: true,
                 email: true,
                 password: true,
-                isRemembered: true
+                confirmPassword: true,
+                isAccepted: true
             })
         }
     }
 
     return (
-        <div className={styles.container}>
-           
+        <div className={styles.SignUpcontainer}>
             <form onSubmit={submitHandler} className={styles.formContainer}>
-                <h2 className={styles.header}>ورود</h2>
+                <h2 className={styles.header}>ثبت نام</h2>
+                <div className={styles.formField}>
+                    <label>نام و نام خانوادگی</label>
+                    <input
+                        className={(errors.name && touched.name) ? styles.uncompleted : styles.formInput}
+                        type="text"
+                        name="name"
+                        value={data.name}
+                        onChange={changeHandler}
+                        onKeyPress={onKeyPressHanlder}
+                    />
+                    {errors.name && touched.name && <span>{errors.name}</span>}
+                </div>
                 <div className={styles.formField}>
                     <label>ایمیل</label>
                     <input
@@ -67,23 +86,35 @@ export const Login = () => {
                     {errors.password && touched.password && <span>{errors.password}</span>}
                 </div>
                 <div className={styles.formField}>
+                    <label>تکرار رمز عبور</label>
+                    <input
+                        className={(errors.confirmPassword && touched.confirmPassword) ? styles.uncompleted : styles.formInput}
+                        type="password"
+                        name="confirmPassword"
+                        value={data.confirmPassword}
+                        onChange={changeHandler}
+                        onKeyPress={onKeyPressHanlder} />
+                    {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>}
+                </div>
+                <div className={styles.formField}>
                     <div className={styles.checkBoxContainer}>
                         <input
                             type="checkbox"
-                            name="isRemembered"
+                            name="isAccepted"
                             value={data.isAccepted}
                             onChange={changeHandler}
                             onKeyPress={onKeyPressHanlder} />
-                            <label>مرا به خاطر بسپار</label>
+                            <label>قوانین را می پذیرم</label>
                     </div>
                     {errors.isAccepted && touched.isAccepted && <span>{errors.isAccepted}</span>}
                 </div>
                 <div className={styles.formButtons}>
-                    <Link to="/signup">ثبت نام</Link>
-                    <button type="submit">ورود</button>
+                    <Link to="/login">ورود</Link>
+                    <button type="submit">ثبت نام</button>
                 </div>
             </form>
-            
+           
         </div>
     );
 };
+

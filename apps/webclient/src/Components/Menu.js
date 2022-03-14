@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect ,useState} from "react";
 import logo from "../img/logo.png";
 import Swal from 'sweetalert2'
 import {
@@ -9,6 +9,7 @@ import {
   NavLink,
   useLocation,
 } from "react-router-dom";
+
 export const Menu = () => {
   
   return (
@@ -24,10 +25,9 @@ export const Menu = () => {
           <a href="" className="user">
             <i className="fa fa-user"></i>
           </a>
-          <a className="site-btn">
-            ثبت نام
-          </a>
-         
+          
+                    <NavLink className="site-btn"  to="/signup">ثبت نام </NavLink>
+
            <NavLink className="site-btn login" to="/login">ورود </NavLink>
          
         

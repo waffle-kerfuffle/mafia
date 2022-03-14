@@ -4,15 +4,11 @@ export const validate = (data, type) => {
 
     if (!data.email) {
         errors.email = "ایمیل الزامی است"
-    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
-        errors.email = "ایمیل وارد شده معتبر نمی باشد"
-    } else {
-        delete errors.email
-    }
+    } 
 
     if (!data.password) {
         errors.password = "رمز عبور الزامی است"
-    } else if (data.password.length < 6) {
+    } else if (data.password.length < 2) {
         errors.password = "رمز عبور باید حداقل 6 کاراکتر باشد"
     } else {
         delete errors.password
